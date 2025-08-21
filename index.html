@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tac Tac Tao - Animated Tic Tac Toe</title>
+    <link rel="stylesheet" href="TacTac.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Player Selection Screen -->
+        <div id="playerSelection" class="player-selection">
+            <h1 class="game-title">Tac Tac Tao</h1>
+            <h2>Choose Your Game Mode</h2>
+            <div class="mode-buttons">
+                <button class="mode-btn" onclick="game.selectMode('human')">
+                    <span class="icon">👥</span>
+                    <span>Play vs Human</span>
+                </button>
+                <button class="mode-btn" onclick="game.selectMode('computer')">
+                    <span class="icon">🤖</span>
+                    <span>Play vs Computer</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="gameScreen" class="game-screen" style="display: none;">
+            <h1 class="game-title">Tac Tac Tao</h1>
+            <div class="game-info">
+                <div class="player-info">
+                    <span class="player-x">Player X</span>
+                    <span class="score">Score: <span id="scoreX">0</span></span>
+                </div>
+                <div class="player-info">
+                    <span id="playerOText" class="player-o">Player O</span>
+                    <span class="score">Score: <span id="scoreO">0</span></span>
+                </div>
+            </div>
+            
+            <div class="game-status">
+                <h2 id="status">Player X's Turn</h2>
+            </div>
+            
+            <div class="game-board">
+                <div class="board-grid">
+                    <div class="cell" data-index="0"></div>
+                    <div class="cell" data-index="1"></div>
+                    <div class="cell" data-index="2"></div>
+                    <div class="cell" data-index="3"></div>
+                    <div class="cell" data-index="4"></div>
+                    <div class="cell" data-index="5"></div>
+                    <div class="cell" data-index="6"></div>
+                    <div class="cell" data-index="7"></div>
+                    <div class="cell" data-index="8"></div>
+                </div>
+            </div>
+            
+            <div class="game-controls">
+                <button id="resetBtn" class="btn">New Game</button>
+                <button id="resetScoreBtn" class="btn">Reset Score</button>
+                <button id="changeModeBtn" class="btn">Change Mode</button>
+            </div>
+            
+            <div class="win-animation" id="winAnimation">
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+                <div class="confetti"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="TacTac.js"></script>
+</body>
+</html>
